@@ -5,6 +5,9 @@ import com.aurora_lyhnn.rpg_life.enums.ItemType;
 import com.aurora_lyhnn.rpg_life.enums.Job;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "customisation_items")
 public class CustomizationItem {
@@ -12,16 +15,75 @@ public class CustomizationItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Enumerated(EnumType.STRING)
-    private ItemType item_type;
+    @Column(name = "item_type")
+    private ItemType itemType;
     private String name;
     @Enumerated(EnumType.STRING)
-    private ItemPart item_part;
-    private String image_url;
+    @Column(name = "item_part")
+    private ItemPart itemPart;
+    @Column(name = "image_url")
+    private String imageUrl;
     @Enumerated(EnumType.STRING)
     private Job job;
     private boolean unlocked;
     private int price;
 
     @ManyToMany(mappedBy = "customisation_items")
-    <List<User> users;
+    private Set<User> users = new HashSet<>();
+
+    public long getId() {
+        return id;
+    }
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ItemPart getItemPart() {
+        return itemPart;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
+    }
+
+    public boolean isUnlocked() {
+        return unlocked;
+    }
+
+    public void setUnlocked(boolean unlocked) {
+        this.unlocked = unlocked;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }

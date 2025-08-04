@@ -12,7 +12,8 @@ public class Outfit {
     private String weapon;
     private String clothing;
     private String shoes;
-    private String head_accessory;
+    @Column(name = "head_accessory")
+    private String headAccessory;
     private String wings;
 
     @OneToOne(mappedBy = "outfit")
@@ -54,12 +55,12 @@ public class Outfit {
         this.shoes = shoes;
     }
 
-    public String getHead_accessory() {
-        return head_accessory;
+    public String getHeadAccessory() {
+        return headAccessory;
     }
 
-    public void setHead_accessory(String head_accessory) {
-        this.head_accessory = head_accessory;
+    public void setHeadAccessory(String headAccessory) {
+        this.headAccessory = headAccessory;
     }
 
     public String getWings() {

@@ -1,10 +1,10 @@
 package com.aurora_lyhnn.rpg_life.enums;
 
 public enum ItemPart {
-    main,
-    arms,
-    ears,
-    front,
-    back,
-    sleeves
+    MAIN,
+    ARMS,
+    EARS,
+    FRONT,
+    BACK,
+    SLEEVES;
 }

@@ -1,9 +1,6 @@
 package com.aurora_lyhnn.rpg_life.model;
 
-import com.aurora_lyhnn.rpg_life.enums.EyeColor;
-import com.aurora_lyhnn.rpg_life.enums.Job;
-import com.aurora_lyhnn.rpg_life.enums.Race;
-import com.aurora_lyhnn.rpg_life.enums.SkinTone;
+import com.aurora_lyhnn.rpg_life.enums.*;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,11 +13,16 @@ public class Character {
     @Enumerated(EnumType.STRING)
     private Race race;
     @Enumerated(EnumType.STRING)
-    private SkinTone skin_tone;
+    @Column(name = "skint_tone")
+    private SkinTone skinTone;
     @Enumerated(EnumType.STRING)
-    private EyeColor eye_color;
+    @Column(name = "eye_color")
+    private EyeColor eyeColor;
     @Enumerated(EnumType.STRING)
     private Job job;
+    private int experience;
+    @Column(name = "hero_title")
+    private HeroTitle heroTitle;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "outfit_id")
@@ -46,20 +48,20 @@ public class Character {
         this.race = race;
     }
 
-    public SkinTone getSkin_tone() {
-        return skin_tone;
+    public SkinTone getSkinTone() {
+        return skinTone;
     }
 
-    public void setSkin_tone(SkinTone skin_tone) {
-        this.skin_tone = skin_tone;
+    public void setSkinTone(SkinTone skinTone) {
+        this.skinTone = skinTone;
     }
 
-    public EyeColor getEye_color() {
-        return eye_color;
+    public EyeColor getEyeColor() {
+        return eyeColor;
     }
 
-    public void setEye_color(EyeColor eye_color) {
-        this.eye_color = eye_color;
+    public void setEyeColor(EyeColor eyeColor) {
+        this.eyeColor = eyeColor;
     }
 
     public Job getJob() {
