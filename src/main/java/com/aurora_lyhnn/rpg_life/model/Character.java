@@ -75,4 +75,17 @@ public class Character {
     public Outfit getOutfit() {
         return outfit;
     }
+
+    public void setOutfit(Outfit outfit) {
+        this.outfit = outfit;
+    }
+
+    public HeroTitle getHeroTitle() {
+        return heroTitle;
+    }
+
+    public void setHeroTitle(HeroTitle heroTitle) {
+        this.heroTitle = heroTitle;
+    }
+
 }
