@@ -4,8 +4,8 @@ import com.aurora_lyhnn.rpg_life.enums.*;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "characters")
-public class Character {
+@Table(name = "heroes")
+public class Hero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -80,6 +80,14 @@ public class Character {
         this.outfit = outfit;
     }
 
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
     public HeroTitle getHeroTitle() {
         return heroTitle;
     }
@@ -87,5 +95,6 @@ public class Character {
     public void setHeroTitle(HeroTitle heroTitle) {
         this.heroTitle = heroTitle;
     }
+
 
 }
