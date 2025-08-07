@@ -17,7 +17,7 @@ public class Outfit {
     private String wings;
 
     @OneToOne(mappedBy = "outfit")
-    Character character;
+    Hero hero;
 
     public long getId() {
         return id;
@@ -71,7 +71,7 @@ public class Outfit {
         this.wings = wings;
     }
 
-    public Character getCharacter() {
-        return character;
+    public Hero getHero() {
+        return hero;
     }
 }
