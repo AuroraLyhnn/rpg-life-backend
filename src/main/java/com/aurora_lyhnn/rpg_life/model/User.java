@@ -1,6 +1,6 @@
 package com.aurora_lyhnn.rpg_life.model;
 
-import com.aurora_lyhnn.rpg_life.enums.RoleType;
+import com.aurora_lyhnn.rpg_life.enums.Role;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -20,8 +20,8 @@ public class User {
     @Column(name = "date_joined")
     private LocalDate dateJoined;
     @Enumerated(EnumType.STRING)
-    @Column(name = "role_type")
-    private RoleType roleType;
+    @Column(name = "role")
+    private Role role;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -47,7 +47,7 @@ public class User {
         return dateJoined;
     }
 
-    public RoleType getRoleType() {
+    public Role getRoleType() {
         return roleType;
     }
 
