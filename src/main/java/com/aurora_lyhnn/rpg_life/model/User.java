@@ -48,7 +48,7 @@ public class User {
     }
 
     public Role getRoleType() {
-        return roleType;
+        return role;
     }
 
     public Set<CustomizationItem> getCustomizationItems() {

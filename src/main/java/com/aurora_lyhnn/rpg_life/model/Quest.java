@@ -11,8 +11,13 @@ public class Quest {
     private long id;
     @Enumerated(EnumType.STRING)
     private QuestType questType;
+    private boolean priority;
     private String description;
     private boolean completed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User questUser;
 
     public long getId() {
         return id;
@@ -24,6 +29,14 @@ public class Quest {
 
     public void setQuestType(QuestType questType) {
         this.questType = questType;
+    }
+
+    public boolean getPriority() {
+        return priority;
+    }
+
+    public void setPriority(boolean priority) {
+        this.priority = priority;
     }
 
     public String getDescription() {

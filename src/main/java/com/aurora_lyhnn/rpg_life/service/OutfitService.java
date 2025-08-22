@@ -6,9 +6,6 @@ import com.aurora_lyhnn.rpg_life.mapper.OutfitMapper;
 import com.aurora_lyhnn.rpg_life.model.Outfit;
 import com.aurora_lyhnn.rpg_life.repository.OutfitRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-
-import java.util.Optional;
 
 @Service
 public class OutfitService {
