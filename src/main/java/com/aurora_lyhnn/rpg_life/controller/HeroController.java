@@ -35,32 +35,4 @@ public class HeroController {
     public ResponseEntity<HeroOutputDto> getHeroById(@PathVariable long id) {
         return ResponseEntity.ok(heroService.getHeroById(id));
     }
-
-
-
-
-
-
-
-//
-//    public ResponseEntity<Hero> createHero(@RequestBody Hero hero) {
-//        this.heroRepository.save(hero);
-//
-//
-////        Hij wil het pad naar de nieuwe resource terugkrijgen >
-//        return ResponseEntity.created(CreateIdUri.getUri(hero.getId())).body(hero);
-//
-//        // this. ... .put(hero.getId, person); > return new ResponseEntity<>(hero, HttpStatus.CREATED);
-//    }
-
-//    @GetMapping("/id")
-////    @PathVariable koppelt de parameter aan het pad
-//    public ResponseEntity<Hero> getHeroById(@PathVariable long id) {
-//
-//        if (this. ... containsKey(id)) {
-//            return ResponseEntity.ok(service.getHeroById(id));
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
 }

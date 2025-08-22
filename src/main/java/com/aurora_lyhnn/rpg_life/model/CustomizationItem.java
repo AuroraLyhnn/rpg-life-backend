@@ -63,7 +63,7 @@ public class CustomizationItem {
         this.job = job;
     }
 
-    public boolean isUnlocked() {
+    public boolean getUnlocked() {
         return unlocked;
     }
 
@@ -85,5 +85,17 @@ public class CustomizationItem {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public void setItemPart(ItemPart itemPart) {
+        this.itemPart = itemPart;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
